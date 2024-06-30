@@ -4,7 +4,7 @@ using namespace std;
 struct Edge{
 	int u,v; //u is the "main" node, v is the node connected to u.
 			   //Think of "I am standing on u, and looking at v's";
-	Edge(int _u, int _v): u(_u), v(_v) {}
+	Edge(int node, int connected): u(node), v(connected) {}
 };
 struct Graph{
 	vector<vector<Edge>> nodes;
@@ -25,9 +25,10 @@ struct Graph{
 			int x = q.front();
 			q.pop();
 			visited[x] = true;
-			cout<<x<<" ";
+			cout<<"Visited: " <<x<<" "<<endl;
 			for(auto &i: nodes[x]){
 				if(!visited[i.v]){
+					cout<<"Node conncted to "<< x << " : "<< i.v << " "<<endl;
 					q.push(i.v);	
 				}
 			}
