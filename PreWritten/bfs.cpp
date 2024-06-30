@@ -25,7 +25,7 @@ struct Graph{
 			int x = q.front();
 			q.pop();
 			visited[x] = true;
-			cout<<"Visited: " <<x<<" "<<endl;
+			cout<<x<< " ";
 			for(auto &i: nodes[x]){
 				if(!visited[i.v]){
 					cout<<"Node conncted to "<< x << " : "<< i.v << " "<<endl;
