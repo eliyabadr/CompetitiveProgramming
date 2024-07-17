@@ -8,9 +8,8 @@ struct Edge{
 };
 struct Graph{
 	vector<vector<Edge>> nodes;
-	vector<bool> visited;
 	int n;
-	Graph(int size): n(size), nodes(size), visited(n,false) {}
+	Graph(int size): n(size), nodes(size),  {}
 
 	void addEdge(int u, int v){
 		nodes[u].emplace_back(u,v);
@@ -33,7 +32,7 @@ struct Graph{
 		}
 	}
 	void dfs(int s_node){
-		
+		vector<bool> visited(size);		
 		visited[s_node] = true;
 		cout<<s_node<<endl;
 		for(auto &x : nodes[s_node]){
