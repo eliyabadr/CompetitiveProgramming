@@ -19,6 +19,7 @@ struct Graph{
 	
 	void bfs(int s_node){
 		queue<int> q; q.push(s_node);
+		visited[s_node] = true;
 		while(!q.empty()){
 			int x = q.front();
 			q.pop();
